@@ -12,6 +12,7 @@ class A2 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
           child: ListView(
             children: const <Widget>[
@@ -101,33 +102,38 @@ class CountryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          title: Column(
-            crossAxisAlignment:CrossAxisAlignment.center,
-            children: <Widget>[
-              Image.asset(
-                flag,
-                width: double.infinity,
-                height: 200,
-                fit: BoxFit. fitWidth,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                "Country Name: $countryName",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "Continent: $continent",
-                style: TextStyle(fontSize: 16),
-              ),
-              Text(
-                "Language: $language",
-                style: TextStyle(fontSize: 16),
-              ),
-            ],
+        Material(
+          elevation: 4.0,
+          shadowColor: Colors.black,
+          borderRadius: BorderRadius.circular(8.0),
+          child: ListTile(
+            title: Column(
+              crossAxisAlignment:CrossAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(
+                  flag,
+                  width: double.infinity,
+                  height: 200,
+                  fit: BoxFit. fitWidth,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  "Country Name: $countryName",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "Continent: $continent",
+                  style: TextStyle(fontSize: 16),
+                ),
+                Text(
+                  "Language: $language",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ],
+            ),
+            tileColor: Colors.white,
+            contentPadding: EdgeInsets.all(0.8),
           ),
-          tileColor: Colors.white,
-          contentPadding: EdgeInsets.all(0.8),
         ),
         const SizedBox(height: 16),
       ],
